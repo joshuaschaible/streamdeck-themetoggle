@@ -1,0 +1,10 @@
+node_modules/
+com.custom.themetoggle.sdPlugin/bin/
+com.custom.themetoggle.sdPlugin/logs/
+com.custom.themetoggle.sdPlugin/node_modules/
+com.custom.themetoggle.sdPlugin/package.json
+com.custom.themetoggle.sdPlugin/package-lock.json
+com.custom.themetoggle.sdPlugin/debug.log
+com.custom.themetoggle.sdPlugin/plugin.js
+nul
+*.log

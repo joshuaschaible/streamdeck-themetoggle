@@ -1,0 +1,50 @@
+{
+  "SDKVersion": 2,
+  "UUID": "com.custom.themetoggle",
+  "Author": "Custom",
+  "CodePath": "bin/plugin.js",
+  "Description": "Toggle system-wide Light/Dark mode with a single button press. Works on both Windows and macOS.",
+  "Name": "ThemeToggle",
+  "Icon": "images/pluginIcon",
+  "Version": "1.0.0.0",
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.15"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.5"
+  },
+  "Category": "System",
+  "CategoryIcon": "images/categoryIcon",
+  "Actions": [
+    {
+      "Icon": "images/actionIcon",
+      "Name": "Toggle Theme",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "images/lightMode",
+          "ShowTitle": false
+        },
+        {
+          "Image": "images/darkMode",
+          "ShowTitle": false
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Toggle between Light and Dark mode",
+      "UUID": "com.custom.themetoggle.toggle",
+      "PropertyInspectorPath": "property-inspector.html"
+    }
+  ]
+}
