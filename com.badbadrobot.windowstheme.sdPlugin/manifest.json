@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Theme Toggle",
+  "Version": "1.1.0.0",
+  "Author": "BadBadRobot",
+  "Description": "Toggle Windows or macOS and app light/dark appearance with one key.",
+  "UUID": "com.badbadrobot.windowstheme",
+  "Icon": "images/plugin",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 2,
+  "Nodejs": {
+    "Version": "20"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.15"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.6"
+  },
+  "Actions": [
+    {
+      "UUID": "com.badbadrobot.windowstheme.toggle",
+      "Name": "Light / Dark Mode",
+      "Tooltip": "Toggle system and apps between light and dark mode",
+      "Icon": "images/action",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "images/moon-3d",
+          "TitleAlignment": "bottom",
+          "FontSize": 12,
+          "ShowTitle": false
+        },
+        {
+          "Image": "images/sun-3d",
+          "TitleAlignment": "bottom",
+          "TitleColor": "#202020",
+          "FontSize": 12,
+          "ShowTitle": false
+        }
+      ]
+    }
+  ],
+  "Category": "Theme Toggle",
+  "CategoryIcon": "images/action"
+}

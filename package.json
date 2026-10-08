@@ -1,21 +1,14 @@
 {
-  "type": "module",
-  "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w"
-  },
-  "dependencies": {
-    "@elgato/streamdeck": "^2.0.1"
-  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^22.13.0",
-    "rollup": "^4.32.1",
-    "tslib": "^2.8.1",
-    "typescript": "^5.7.3"
+    "@elgato/cli": "^1.10.1",
+    "esbuild": "^0.28.2",
+    "sharp": "^0.35.5",
+    "ws": "^8.22.0"
+  },
+  "scripts": {
+    "test": "node test.cjs && node --test tests",
+    "build": "node build.cjs",
+    "pack": "node node_modules/@elgato/cli/bin/streamdeck.mjs pack com.badbadrobot.windowstheme.sdPlugin --output dist/1.1.0",
+    "smoke:read": "node scripts/smoke-read.cjs"
   }
 }

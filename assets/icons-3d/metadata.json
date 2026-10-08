@@ -1,0 +1,26 @@
+{
+  "createdDate": "2026-10-08",
+  "generator": "Built-in image_gen.imagegen",
+  "useCase": "stylized-concept",
+  "assets": [
+    {
+      "name": "moon",
+      "master": "assets/icons-3d/moon.png",
+      "buttonState": "dark",
+      "action": "switch to light",
+      "prompt": "Use case: stylized-concept. Asset type: one square Stream Deck button icon, full-bleed artwork, no border and no text. Create a clean polished 3D crescent moon icon against a themed starry night background. Subject: a single large centered pearl-white crescent moon, sculptural rounded beveled form with real thickness, crescent opens to the right, satin ceramic material, subtle icy lavender reflections and soft rim light. Clear iconic silhouette occupies about 65 percent of the square, fully inside a generous 12 percent safe margin. Background: deep midnight-blue to indigo atmospheric gradient, sparse softly glowing small stars around the moon, restrained starlight halo, elegant and uncluttered. Premium friendly 3D app-icon rendering, clean smooth materials, soft studio lighting, straight-on orthographic-like camera with a slight side angle to reveal thickness, high contrast. Designed to remain legible downscaled to 72 pixels; prioritize a bold moon silhouette, use only a handful of larger stars. No face, no emoji, no clouds covering the moon, no planet, no scenery, no horizon, no words, no lettering, no watermark, no outlines or frame, no mockup. Square 1:1 composition."
+    },
+    {
+      "name": "sun",
+      "master": "assets/icons-3d/sun.png",
+      "buttonState": "light",
+      "action": "switch to dark",
+      "prompt": "Use case: stylized-concept. Asset type: one square Stream Deck button icon, full-bleed artwork, no border and no text. Create a clean polished 3D sun icon against a themed bright daytime sky, as a matched companion to a pearl-white crescent moon on a midnight-indigo star field. Subject: a single large centered warm golden-yellow sun with a softly domed circular center and eight distinct short rounded sculptural rays, satin ceramic material, subtle orange edge shading and golden reflections, rounded beveled form with real thickness. Clear iconic silhouette occupies about 65 percent of the square, fully inside a generous 12 percent safe margin. Background: luminous azure-blue daytime sky with gentle pale-blue atmosphere and a restrained warm halo behind the sun; at most two soft small fluffy cloud forms low at the edges, leaving the sun completely unobstructed. Premium friendly 3D app-icon rendering, clean smooth materials, soft studio lighting, straight-on orthographic-like camera with a slight side angle to reveal thickness, high contrast. Designed to remain legible downscaled to 72 pixels; prioritize a bold sun silhouette and minimal background. Match the moon icon in scale, framing, material and rendering style. No face, no emoji, no scenery, no horizon, no words, no lettering, no watermark, no outlines or frame, no mockup. Square 1:1 composition."
+    }
+  ],
+  "exports": {
+    "standardPixels": 72,
+    "highResolutionPixels": 144
+  },
+  "notes": "Resized using sharp; original generated masters retained. No theme-switching behavior changed in this visual update."
+}
