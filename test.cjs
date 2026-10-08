@@ -1,0 +1,36 @@
+const assert = require('node:assert/strict');
+const {createController} = require('./src/plugin.cjs');
+(async()=>{
+ const sent=[]; let state=1; let toggles=0;
+ const controller=createController(m=>sent.push(m),async mode=>{if(mode==='Toggle'){state=1-state;toggles++;}return state;});
+ await controller.onMessage({event:'willAppear',context:'a'});
+ assert.equal(sent.at(-1).payload.state,1);
+ await controller.onMessage({event:'willAppear',context:'b'});
+ await controller.onMessage({event:'keyDown',context:'a'});
+ assert.equal(toggles,1); assert.equal(sent.at(-1).payload.state,0);
+ assert.deepEqual(sent.slice(-2).map(x=>x.context),['a','b']);
+ await controller.onMessage({event:'keyDown',context:'a'});
+ assert.equal(sent.at(-1).payload.state,1);
+ await controller.onMessage({event:'willDisappear',context:'b'});
+ await controller.refresh(); assert.equal(sent.at(-1).context,'a');
+ const errors=[];
+ await createController(m=>errors.push(m),async()=>{throw Error('simulated');}).onMessage({event:'keyDown',context:'a'});
+ assert.equal(errors[0].event,'showAlert');
+ let finish; const calls=[]; let current=1;
+ const guarded=createController(()=>{},async mode=>{
+   calls.push(mode);
+   if(calls.length===1) await new Promise(r=>finish=r);
+   if(mode==='Toggle') current=1-current;
+   return current;
+ });
+ const first=guarded.onMessage({event:'willAppear',context:'a'});
+ await Promise.resolve();
+ const press1=guarded.onMessage({event:'keyDown',context:'a'});
+ const press2=guarded.onMessage({event:'keyDown',context:'a'});
+ await guarded.refresh();
+ assert.deepEqual(calls,['Read']);
+ finish(); await Promise.all([first,press1,press2]);
+ assert.deepEqual(calls,['Read','Toggle','Toggle']);
+ assert.equal(current,1);
+ console.log('PASS: both toggle directions, synchronized buttons, failure feedback, presses queued during polling and toggling.');
+})().catch(e=>{console.error(e);process.exitCode=1;});
